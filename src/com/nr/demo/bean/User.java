@@ -7,9 +7,17 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @XmlRootElement
 public class User {
+    private int userId;
     private String name;
     private int age;
 
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
     public String getName() {
         return name;
     }

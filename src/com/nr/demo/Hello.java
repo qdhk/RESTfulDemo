@@ -10,8 +10,9 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by nr on 2017/02/10 0010.
  */
-@Path("/webapi/myresource")
+@Path("/myresource")
 public class Hello {
+    private final static String CHARSET_UTF_8="charset=utf-8";
     // This method is called if TEXT_PLAIN is request
 
     @GET
@@ -41,10 +42,10 @@ public class Hello {
      */
     @GET
     @Path("/userJson")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON+";"+CHARSET_UTF_8)
     public User getUserJson(){
         User user=new User();
-        user.setName("niurui");
+        user.setName("牛锐");
         user.setAge(23);
         return user;
     }
@@ -56,10 +57,10 @@ public class Hello {
      */
     @GET
     @Path("/userXml")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_XML+";"+CHARSET_UTF_8)
     public User getUserXml(){
         User user=new User();
-        user.setName("niurui");
+        user.setName("牛锐");
         user.setAge(23);
         return user;
     }
